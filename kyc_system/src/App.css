@@ -1,0 +1,378 @@
+@import "tailwindcss";
+/*=========================
+  Global Styles & Variables
+  =========================*/
+:root {
+  --primary-blue: #194a8d;
+  --dark-blue: #0d2c54; /* For sections like CTA */
+  --light-blue-bg: #f0f4f9; /* For alternating sections */
+  --white-color: #ffffff;
+  --text-dark: #1d3557;
+  --text-light: #6c757d;
+  --border-color: #e0e0e0;
+
+  --font-family: 'Poppins', sans-serif;
+  --header-height: 80px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--white-color);
+  color: var(--text-dark);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.section-alt {
+  background-color: var(--light-blue-bg);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--dark-blue);
+  margin-bottom: 60px;
+}
+
+.btn {
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--white-color);
+  color: var(--primary-blue);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/*=========================
+  Header Styles
+  =========================*/
+.header {
+  background-color: var(--primary-blue);
+  height: var(--header-height);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white-color);
+  display: flex;
+  align-items: center;
+}
+
+.logo-b {
+  display: inline-block;
+  border: 2px solid var(--white-color);
+  padding: 2px 8px;
+  margin-right: 8px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-link {
+  color: var(--white-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.nav-link:hover {
+  opacity: 0.8;
+}
+
+.nav-link-button {
+  display: none; /* Hide on desktop */
+}
+
+.menu-toggle {
+  display: none; /* Hide on desktop */
+  color: var(--white-color);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/*=========================
+  Hero Section
+  =========================*/
+.hero {
+  background-color: var(--primary-blue);
+  padding: 100px 0;
+  color: var(--white-color);
+  background-image:
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08), transparent 40%),
+    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.05), transparent 30%);
+    /* A subtle representation of the background graphic */
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.hero-content {
+  flex-basis: 50%;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin: 25px 0;
+  max-width: 500px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.hero-graphic {
+  flex-basis: 40%;
+  position: relative;
+  height: 300px;
+  opacity: 0.3; /* This mimics the faint graphic look */
+}
+
+.graphic-cube {
+  width: 150px;
+  height: 150px;
+  border: 2px solid var(--white-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(15deg);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.graphic-person {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--white-color);
+  border-radius: 50%;
+  position: absolute;
+}
+.p1 { top: 10%; left: 30%; }
+.p2 { top: 70%; left: 10%; }
+.p3 { top: 75%; left: 80%; }
+
+/*=========================
+  How It Works Section
+  =========================*/
+.how-it-works-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.how-it-works-card {
+  background-color: var(--white-color);
+  padding: 40px 30px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.how-it-works-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+  font-size: 3rem;
+  color: var(--primary-blue);
+  margin-bottom: 20px;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.card-description {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/*=========================
+  Features Section
+  =========================*/
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.feature-item {
+  text-align: center;
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: var(--primary-blue);
+  margin-bottom: 20px;
+  background-color: var(--white-color);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.feature-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.feature-description {
+  color: var(--text-light);
+}
+
+/*=========================
+  CTA Section
+  =========================*/
+.cta-section {
+  background-color: var(--dark-blue);
+  padding: 60px 0;
+  text-align: center;
+}
+
+.cta-title {
+  color: var(--white-color);
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+/*=========================
+  Responsive Design
+  =========================*/
+
+/* Tablets and smaller desktops */
+@media (max-width: 992px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-content {
+    flex-basis: 100%;
+  }
+  .hero-subtitle {
+    margin: 25px auto;
+  }
+  .hero-graphic {
+    display: none; /* Hide graphic on smaller screens for simplicity */
+  }
+  .how-it-works-grid {
+    grid-template-columns: 1fr;
+  }
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px 30px;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-blue);
+    flex-direction: column;
+    padding: 20px 0;
+    gap: 0;
+  }
+  .nav.nav-open {
+    display: flex;
+  }
+  .nav-link {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+  }
+  .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  .nav-link-button {
+    display: block;
+    margin: 15px 20px 0;
+    padding: 12px;
+    background-color: var(--white-color);
+    color: var(--primary-blue);
+    border-radius: 8px;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .section-title, .cta-title {
+    font-size: 2rem;
+  }
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
